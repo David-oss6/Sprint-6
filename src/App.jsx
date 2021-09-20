@@ -6,7 +6,15 @@ import { useState } from "react";
 
 
 export function App() {
-    const [a, setA] = useState(<Escena parrafo1={textos[0].parrafo1} />)
+    let [a, setA] = useState(<Escena parrafo1={textos[0].parrafo1} />)
+    const parrafo1 = textos[0].parrafo1;
+    console.log(parrafo1);
+    const parrafo2 = textos[1].parrafo2;
+    console.log(parrafo2);
+    const parrafo3 = textos[2].parrafo3;
+    console.log(parrafo3);
+    const parrafo4 = textos[3].parrafo4;
+    console.log(parrafo4);
 
 
     const prevBtn = () => {
@@ -28,12 +36,14 @@ export function App() {
         if (a === <Escena parrafo1={textos[0].parrafo1} />) {
             return setA(<Escena parrafo2={textos[1].parrafo2} />)
         }
+
         if (a === <Escena parrafo2={textos[1].parrafo2} />) {
             setA(<Escena parrafo3={textos[2].parrafo3} />)
         }
         if (a === <Escena parrafo3={textos[2].parrafo3} />) {
             setA(<Escena parrafo4={textos[3].parrafo4} />)
         }
+
 
     }
 
@@ -58,7 +68,8 @@ export function App() {
         <Escena parrafo2={textos[1].parrafo2} />
         <Escena parrafo3={textos[2].parrafo3} />
         <Escena parrafo4={textos[3].parrafo4} />
-        <br />
+
+
 
 
     </div >
