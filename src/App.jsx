@@ -2,13 +2,13 @@ import React from "react";
 import { Escena } from "./components/escena/Escena";
 import textos from './components/escena/textos.json'
 import { useState } from "react";
+import { BtnCss, GlobalStyle } from "./components/escena/styled.js";
+
 
 
 
 export function App() {
-
     const [a, setA] = useState(0)
-    console.log(a)
     const prevBtn = () => {
         if (a === 1) {
             setA(0)
@@ -19,11 +19,7 @@ export function App() {
         if (a === 3) {
             setA(2)
         }
-
-
-
     }
-
     const nextBtn = () => {
         if (a === 0) {
             setA(1)
@@ -34,32 +30,26 @@ export function App() {
         if (a === 2) {
             setA(3)
         }
-
-
     }
 
 
 
-    return <div style={{ textAlign: "center", fontSize: "20px", margin: "5px" }}>
+    return <div  >
+
+
         Sprint 6<br />
-        <button
-            style={{
-                margin: "10px 30px 10px 30px", backgroundColor: "lightblue", fontSize: "20px", padding: "10px 40px"
-            }}
-            onClick={() => prevBtn()} >Anterior</button>
-        <button
-            style={{
-                margin: "10px 30px 10px 30px", backgroundColor: "lightblue", fontSize: "20px", padding: "10px 40px"
-            }}
-            onClick={() => nextBtn()} >Siguiente</button>
+        <BtnCss onClick={() => prevBtn()} >Anterior</BtnCss>
+        <BtnCss onClick={() => nextBtn()} >Siguiente</BtnCss>
         <br />
+
         <Escena parrafo={textos[a]} />
+
         <br />
         <Escena parrafo={textos[0]} />
         <Escena parrafo={textos[1]} />
         <Escena parrafo={textos[2]} />
         <Escena parrafo={textos[3]} />
-
+        <GlobalStyle />
 
 
 
