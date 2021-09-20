@@ -1,47 +1,38 @@
 import React from "react";
 import { Escena } from "./components/escena/Escena";
-import { textos } from "./components/escena/Textos";
+import textos from './components/escena/textos.json'
 import { useState } from "react";
 
 
 
 export function App() {
-    let [a, setA] = useState(<Escena parrafo1={textos[0].parrafo1} />)
-    const parrafo1 = textos[0].parrafo1;
-    console.log(parrafo1);
-    const parrafo2 = textos[1].parrafo2;
-    console.log(parrafo2);
-    const parrafo3 = textos[2].parrafo3;
-    console.log(parrafo3);
-    const parrafo4 = textos[3].parrafo4;
-    console.log(parrafo4);
 
-
+    const [a, setA] = useState(0)
+    console.log(a)
     const prevBtn = () => {
-        if (a === <Escena parrafo2={textos[1].parrafo2} />) {
-            setA(<Escena parrafo1={textos[0].parrafo1} />)
+        if (a === 1) {
+            setA(0)
         }
-        if (a === <Escena parrafo3={textos[2].parrafo3} />) {
-            setA(<Escena parrafo2={textos[1].parrafo2} />)
+        if (a === 2) {
+            setA(1)
         }
-        if (a === <Escena parrafo4={textos[3].parrafo4} />) {
-            setA(<Escena parrafo3={textos[2].parrafo3} />)
+        if (a === 3) {
+            setA(2)
         }
-        return a
+
 
 
     }
 
     const nextBtn = () => {
-        if (a === <Escena parrafo1={textos[0].parrafo1} />) {
-            return setA(<Escena parrafo2={textos[1].parrafo2} />)
+        if (a === 0) {
+            setA(1)
         }
-
-        if (a === <Escena parrafo2={textos[1].parrafo2} />) {
-            setA(<Escena parrafo3={textos[2].parrafo3} />)
+        if (a === 1) {
+            setA(2)
         }
-        if (a === <Escena parrafo3={textos[2].parrafo3} />) {
-            setA(<Escena parrafo4={textos[3].parrafo4} />)
+        if (a === 2) {
+            setA(3)
         }
 
 
@@ -62,12 +53,12 @@ export function App() {
             }}
             onClick={() => nextBtn()} >Siguiente</button>
         <br />
-        {a}
+        <Escena parrafo={textos[a]} />
         <br />
-        <Escena parrafo1={textos[0].parrafo1} />
-        <Escena parrafo2={textos[1].parrafo2} />
-        <Escena parrafo3={textos[2].parrafo3} />
-        <Escena parrafo4={textos[3].parrafo4} />
+        <Escena parrafo={textos[0]} />
+        <Escena parrafo={textos[1]} />
+        <Escena parrafo={textos[2]} />
+        <Escena parrafo={textos[3]} />
 
 
 
