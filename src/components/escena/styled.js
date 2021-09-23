@@ -2,8 +2,6 @@
 import styled, { createGlobalStyle } from "styled-components";
 import inicial from '../img/inicial.png'
 
-
-
 export const GlobalStyle = createGlobalStyle`
 body {
     text-Align: center;
@@ -14,15 +12,15 @@ body {
 `;
 
 ///Pantalla inicial **************************
-
+const imagen = (props) => { return props.image };
 export const InitialDiv = styled.div`
+background-image: url(${imagen});
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
 height: 1000px ;
 
 `;
-
 
 export const InitialBtn = styled.button`
 border: 3px solid ;
