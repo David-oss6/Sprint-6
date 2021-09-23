@@ -6,7 +6,7 @@ export const Escena = (props) => {
 
 
     return (
-        <Border>
-            {props.parrafo}{props.activa}
+        <Border activa={props.activa} >
+            {props.parrafo}
         </Border >)
 }
