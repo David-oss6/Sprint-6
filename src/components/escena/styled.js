@@ -58,7 +58,6 @@ height: 1200px;
 /// App y general **************************
 
 export const Border = styled.div`
-
 border-radius: 50px;
 border: black solid 3px ;
 margin: 35px;

@@ -1,20 +1,17 @@
 import React from "react";
 import { Escena } from "./components/escena/Escena";
 import { PantallaInicial } from "./components/PantallaInicial";
-import textos from './components/escena/textos.json'
+import { texto } from './components/escena/textos'
 import { useState } from "react";
 import { BtnCss, GlobalStyle, InicialBack, InitialBtn, InitialDiv } from "./components/escena/styled.js";
-import uno from './components/img/uno.jpg'
-import dos from './components/img/dos.jpg';
-import tres from './components/img/tres.jpg';
-import cuatro from './components/img/cuatro.jpg';
+
 
 
 export function App() {
     const [a, setA] = useState(0);
     const [start, setStart] = useState(false)
-    const frases = [textos[0], textos[1], textos[2], textos[3]]
-    const imagenes = [uno, dos, tres, cuatro]
+    const frases = [texto[0].txt, texto[1].txt, texto[2].txt, texto[3].txt]
+
 
     const prevBtn = () => {
         if (a === 1) {
@@ -56,7 +53,7 @@ export function App() {
         <div>
             <div>
                 {start ? <InitialDiv style={{
-                    backgroundImage: `url(${imagenes[a]})`
+                    backgroundImage: `url(${texto[a].img})`
                 }}  >
 
                     <br />
