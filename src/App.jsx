@@ -3,7 +3,7 @@ import { Escena } from "./components/escena/Escena";
 import { PantallaInicial } from "./components/PantallaInicial";
 import textos from './components/escena/textos.json'
 import { useState } from "react";
-import { BtnCss, GlobalStyle, InicialBack, InitialBtn } from "./components/escena/styled.js";
+import { BtnCss, GlobalStyle, InicialBack, InitialBtn, InitialDiv } from "./components/escena/styled.js";
 import uno from './components/img/uno.jpg'
 import dos from './components/img/dos.jpg';
 import tres from './components/img/tres.jpg';
@@ -55,13 +55,9 @@ export function App() {
     return <div  >
         <div>
             <div>
-                {start ? <div style={{
-                    backgroundImage: `url(${imagenes[a]})`,
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat",
-                    backgroundSize: "cover",
-                    height: "1000px"
-                }} >
+                {start ? <InitialDiv style={{
+                    backgroundImage: `url(${imagenes[a]})`
+                }}  >
 
                     <br />
                     <BtnCss onClick={() => prevBtn()} >Anterior</BtnCss>
@@ -73,7 +69,7 @@ export function App() {
                         })
                     }
 
-                </div>
+                </InitialDiv>
                     : <InicialBack>
                         <InitialBtn onClick={() => empezar()}>Empezamos!</InitialBtn>
                         <PantallaInicial />
